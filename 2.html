@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<script>
+ function k7() {
+           window.location.href="https://www.qq.com";
+        }
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>市場情報 - LINE公式アカウント</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic Pro', 'Yu Gothic', 'Meiryo', sans-serif;
+            background: linear-gradient(135deg, #0a1428 0%, #1e3a5f 50%, #2c5aa0 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Section */
+        .hero-section {
+            text-align: center;
+            padding: 20px 0;
+            background: radial-gradient(ellipse at center, rgba(44, 90, 160, 0.3) 0%, transparent 70%);
+        }
+
+        .hero-image {
+            width: 300px;
+            height: auto;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            color: #e0e6ed;
+            line-height: 1.6;
+        }
+
+        /* Main Content Section */
+        .content-section { 
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            margin: 40px 0;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .content-flex {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .content-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .content-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .content-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .content-title {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        .content-description {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #e0e6ed;
+            margin-bottom: 30px;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .features-title {
+            font-size: 2.4rem;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #FFD700;
+        }
+
+        .features-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: #e0e6ed;
+            line-height: 1.6;
+        }
+
+        /* Risk Warning Section */
+        .risk-section {
+            background: rgba(255, 69, 58, 0.1);
+            border: 2px solid rgba(255, 69, 58, 0.3);
+            border-radius: 20px; 
+            margin: 60px 0;
+        }
+
+        .risk-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #FFD700;
+        }
+
+        .risk-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #e0e6ed;
+        }
+
+        .risk-item {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .risk-item:before {
+            content: "•";
+            color: #FFD700;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0 120px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 60px;
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-link {
+            color: #FFD700;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: #FFA500;
+        }
+
+        /* Floating Button */
+        .floating-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000;
+            border: none;
+            padding: 20px 60px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            animation: breathe 2s ease-in-out infinite;
+        }
+
+        .floating-btn:hover {
+            transform: translateX(-50%) scale(1.05);
+            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+        }
+
+        @keyframes breathe {
+            0%, 100% {
+                transform: translateX(-50%) scale(1);
+                box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+            }
+            50% {
+                transform: translateX(-50%) scale(1.05);
+                box-shadow: 0 15px 40px rgba(255, 215, 0, 0.6);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .content-flex {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .content-title {
+                font-size: 1.8rem;
+            }
+
+            .features-title {
+                font-size: 2rem;
+            }
+
+            .floating-btn {
+                padding: 15px 40px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 580px) {
+            .hero-image { 
+            }
+
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .content-title {
+                font-size: 1.6rem;
+            }
+
+            .floating-btn {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <img src="img/1.jpg" alt="Market Information" class="hero-image">
+            <h1 class="hero-title">LINE友達追加で市場情報を即座に取得</h1>
+            <p class="hero-subtitle">今すぐあなたのLINEで取得</p>
+        </div>
+
+        <!-- Main Content Section -->
+        <div class="content-section">
+            <div class="content-flex">
+                <div class="content-image">
+                    <img src="img/2.png" alt="LINE Market Info">
+                </div>
+                <div class="content-text">
+                    <h2 class="content-title">無料で市場情報を購読</h2>
+                    <p class="content-description">
+                        私たちをLINE友達に追加して、公開市場情報を無料で取得し、<br>
+                        市場の変化をいつでも把握しましょう！
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Risk Warning Section -->
+        <div class="risk-section">
+            <h3 class="risk-title">🔹 重要なリスク警告</h3>
+            <div class="risk-content">
+                <div class="risk-item">このサービスは一般的な市場情報のみを提供するものであり、いかなる投資アドバイスや推奨も構成するものではありません</div>
+                <div class="risk-item">金融市場にはリスクが伴い、投資の一部または全部を失う可能性があります。</div>
+				<div class="risk-item">示されているすべての例は過去のデータ分析であり、将来の収益を保証するものではありません。</div>
+				<div class="risk-item">投資家は自身のリスク許容度に基づいて慎重に決定を下すべきです。</div>
+				<div class="risk-item">すべての情報は客観的な事実に基づく記述であり、投資アドバイスを構成するものではありません。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-links">
+            <a href="Privacy.html" class="footer-link">プライバシーポリシー</a>
+            <a href="terms.html" class="footer-link">利用規約</a>
+			  <a href="Disclaimer.html" class="footer-link">免責事項</a>
+        </div>
+    </div>
+
+    <!-- Floating Button -->
+    <button class="floating-btn" onclick="k7()">
+        LINE友達追加で今すぐ開始
+    </button>
+
+    <script>
+       
+
+        // 添加暗色模式支持
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            document.documentElement.classList.add('dark');
+        }
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+            if (event.matches) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        });
+    </script>
+</body>
+</html>
